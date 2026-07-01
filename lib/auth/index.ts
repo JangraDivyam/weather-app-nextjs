@@ -10,6 +10,7 @@ export const auth = betterAuth({
   trustedOrigins: [
     "https://weather-app-nextjs-i1zc.vercel.app",
     "http://localhost:3000",
+    "https://*.vercel.app",
   ],
   baseURL: process.env.BETTER_AUTH_URL,
 });
