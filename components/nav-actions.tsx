@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth/client";
-import { LayoutDashboard, LogOut, LogIn, UserPlus } from "lucide-react";
+import { LayoutDashboard, LogOut, LogIn, UserPlus, Home } from "lucide-react";
 
 interface Props { user: { name: string; email: string } | null; }
 
@@ -27,6 +27,9 @@ export function NavActions({ user }: Props) {
 
   return (
     <div className="flex items-center gap-3">
+      <Link href="/" className="flex items-center gap-1.5 text-sm text-zinc-400 hover:text-white transition-colors">
+        <Home className="w-4 h-4" /> Home
+      </Link>
       <Link href="/dashboard" className="flex items-center gap-1.5 text-sm text-zinc-400 hover:text-white transition-colors">
         <LayoutDashboard className="w-4 h-4" /> Dashboard
       </Link>

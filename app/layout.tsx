@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.className} min-h-screen bg-zinc-950`}>
         <Navbar />
         {children}
-        <Toaster theme="dark" richColors position="top-right" />
+        <Toaster theme="dark" richColors position="bottom-right" />
       </body>
     </html>
   );

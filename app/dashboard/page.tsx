@@ -6,7 +6,7 @@ import { searchHistory, favouriteCity } from "@/db/schema";
 import { eq, desc } from "drizzle-orm";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
-import { Heart, Clock, Cloud, Trash2 } from "lucide-react";
+import { Heart, Clock, Cloud, Trash2, Home } from "lucide-react";
 import { format } from "date-fns";
 import { DeleteHistoryButton } from "@/components/delete-history-button";
 
@@ -28,9 +28,18 @@ export default async function DashboardPage() {
 
   return (
     <main className="max-w-4xl mx-auto px-6 py-10 space-y-8">
-      <div>
-        <h1 className="text-2xl font-bold text-white">Dashboard</h1>
-        <p className="text-zinc-500 text-sm mt-1">Welcome back, {session.user.name.split(" ")[0]}</p>
+      <div className="flex items-center justify-between border-b border-white/5 pb-5">
+        <div>
+          <h1 className="text-2xl font-bold text-white">Dashboard</h1>
+          <p className="text-zinc-500 text-sm mt-1">Welcome back, {session.user.name.split(" ")[0]}</p>
+        </div>
+        <Link
+          href="/"
+          className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-all"
+        >
+          <Home className="w-4 h-4" />
+          Home
+        </Link>
       </div>
 
       {/* Favourites */}
