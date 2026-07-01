@@ -2,7 +2,7 @@ import { SearchBar } from "@/components/search-bar";
 import { Cloud, Wind, Droplets, Eye } from "lucide-react";
 import Link from "next/link";
 
-const POPULAR = ["New York", "London", "Tokyo", "Paris", "Dubai", "Sydney"];
+const POPULAR = ["Hisar", "Jind", "Bhiwani", "Panipat", "Delhi", "rohtak", "Karnal", "Ambala", "Kurukshetra", "Yamunanagar"];
 
 export default function HomePage() {
   return (
@@ -13,10 +13,10 @@ export default function HomePage() {
           <Cloud className="w-10 h-10 text-blue-400" />
         </div>
         <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight">
-          Weather, <span className="text-blue-400">worldwide</span>
+          Weather, <span className="text-blue-400">haryana and beyond</span>
         </h1>
         <p className="text-zinc-400 text-lg mb-10 max-w-md">
-          Real-time weather and 5-day forecasts for any city on Earth.
+          Real-time weather and 5-day forecasts for any city on Earth by dj.
         </p>
         <SearchBar />
 
