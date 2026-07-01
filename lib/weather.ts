@@ -29,7 +29,7 @@ export interface ForecastDay {
 export async function getCurrentWeather(city: string): Promise<CurrentWeather> {
   const res = await fetch(
     `${BASE}/weather?q=${encodeURIComponent(city)}&appid=${KEY}&units=metric`,
-    { next: { revalidate: 600 } }
+    { cache: "no-store" }
   );
   if (!res.ok) throw new Error("City not found");
   const d = await res.json();
@@ -52,7 +52,7 @@ export async function getCurrentWeather(city: string): Promise<CurrentWeather> {
 export async function getForecast(city: string): Promise<ForecastDay[]> {
   const res = await fetch(
     `${BASE}/forecast?q=${encodeURIComponent(city)}&appid=${KEY}&units=metric`,
-    { next: { revalidate: 600 } }
+   { cache: "no-store" }
   );
   if (!res.ok) throw new Error("City not found");
   const d = await res.json();
